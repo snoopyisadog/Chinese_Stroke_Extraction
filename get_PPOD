@@ -1,0 +1,13 @@
+function ppod = get_PPOD( pbod )
+    [ hei, wid, ang] = size(pbod);
+    range = ang/2;
+    ppod = zeros(hei,wid,range);
+    for i = 1:hei
+        for j = 1:wid
+            for k = 1:range
+                ppod( i,j,k) = pbod(i,j,k) + pbod(i,j,ang+1-k);
+            end
+        end
+    end
+end
+
